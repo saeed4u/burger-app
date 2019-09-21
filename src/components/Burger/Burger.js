@@ -6,8 +6,6 @@ import classes from './Burger.css'
 
 const Burger = (props) => {
 
-    console.log(props.ingredients);
-
     let transformedIngredients = Object.keys(props.ingredients)
         .map(igKey => {
             return [...Array(props.ingredients[igKey])].map((_,index) => <BurgerIngredient key={igKey + index} type={igKey} />)
@@ -30,7 +28,7 @@ const Burger = (props) => {
 }
 
 Burger.propTypes = {
-    ingredients: PropTyps.array.isRequired
+    ingredients: PropTyps.object.isRequired
 };
 
 export default Burger;
